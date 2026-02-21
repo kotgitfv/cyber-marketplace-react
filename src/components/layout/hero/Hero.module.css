@@ -1,0 +1,32 @@
+.hero {
+  background-color: var(--linear);
+  height: 770px;
+  padding-top: 88px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre_title {
+  color: rgba(128, 128, 128, 0.815);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.title {
+  font-weight: 100;
+  font-size: 72px;
+  margin-top: 16px;
+}
+
+.span {
+  font-weight: 600;
+}
+
+.subtitle {
+  color: rgba(128, 128, 128, 0.856);
+  margin-top: 16px;
+  margin-bottom: 32px;
+}

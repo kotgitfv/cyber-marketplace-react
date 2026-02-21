@@ -1,0 +1,26 @@
+:root {
+    --linear: #211C24;
+}
+.App {
+    text-align: center;
+}
+.light_btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 16px 56px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.6s all;
+  &:hover {
+    background: white;
+    color: black;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+section {
+  padding: 0 16px;
+}
