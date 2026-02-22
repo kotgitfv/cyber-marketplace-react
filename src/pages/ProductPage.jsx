@@ -1,7 +1,7 @@
 import React from 'react';
 import { Smartphone, Cpu, Camera, Battery, Layers, Monitor } from 'lucide-react';
-import styles from './ProductPage.module.css';
 import iphoneImg from '../assets/img/iphone14pro Space.png';
+import styles from "./ProductStyles.module.css"
 
 const ProductPage = () => {
   return (
