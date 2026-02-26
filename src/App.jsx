@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/header/Header.jsx';
 import Hero from './components/layout/hero/Hero.jsx';
-import ProductPage from './pages/ProductPage.jsx'; 
+import Categories from './components/layout/categories/Categories.jsx'
+import ProductPage from './pages/Product/ProductPage.jsx'; 
+import Footer from './components/layout/footer/Footer.jsx';
+import Products from './components/layout/products/products.jsx';
 import './App.css';
 
 function App() {
@@ -9,13 +12,19 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header /> 
-
         <main>
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Products />
+                <Categories />
+              </>
+            } />
             <Route path="/product" element={<ProductPage />} />
           </Routes>
         </main>
+            <Footer />
       </div>
     </BrowserRouter>
   );

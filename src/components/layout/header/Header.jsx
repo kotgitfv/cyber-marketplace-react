@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // 1. Импортируем Link
+import { Link } from 'react-router-dom';
 import { Menu, ShoppingCart, Heart, UserRound } from 'lucide-react';
 import logoImg from '../../../assets/img/Logo.png';
 import styles from "./Header.module.css";
@@ -8,19 +8,17 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  // Переключатель бургера
   const burgerOn = () => {
     setIsActive(!isActive);
   };
 
-  // Закрытие меню при клике на ссылку (чтобы на мобилках меню пряталось после перехода)
   const closeMenu = () => {
     setIsActive(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -29,7 +27,6 @@ const Header = () => {
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.header_scrolled : ''}`}>
-        {/* Логотип теперь тоже ссылка на главную */}
         <Link to="/" className={styles.logo} onClick={closeMenu}>
             <img src={logoImg} alt="Logo" />
         </Link>

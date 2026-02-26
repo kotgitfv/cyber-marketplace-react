@@ -1,0 +1,52 @@
+.categories {
+    padding-block: 64px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bottom {
+    margin-top: 48px;
+}
+
+.cards {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    .card {
+        background: #ededed;
+        flex: 0 0 calc(50% - 8px);
+        height: 128px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+        scroll-snap-align: start;
+    }
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}

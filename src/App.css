@@ -11,10 +11,27 @@
   padding: 16px 56px;
   border-radius: 6px;
   font-size: 16px;
-  transition: 0.6s all;
+  transition: 0.4s all;
   &:hover {
     background: white;
     color: black;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.dark_btn {
+  background: none;
+  border: 1px solid black;
+  color: black;
+  padding: 16px 56px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.4s all;
+  &:hover {
+    background: black;
+    color: white;
   }
   &:active {
     transform: scale(0.96);
