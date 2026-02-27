@@ -1,17 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, ShoppingCart, Heart, UserRound } from 'lucide-react';
 import logoImg from '../../../assets/img/Logo.png';
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(false);
+const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
+
+  const menuRef = useRef(null);
+
   const burgerOn = () => {
     setIsActive(!isActive);
   };
-
+  
   const closeMenu = () => {
     setIsActive(false);
   };
@@ -21,9 +24,22 @@ const Header = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
+    const handleClickOutside = (event) => {
+
+      if (isActive && menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isActive]);
+
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.header_scrolled : ''}`}>
@@ -35,7 +51,7 @@ const Header = () => {
           <Menu />
         </button>
 
-        <nav className={`${styles.nav} ${isActive ? styles.active : ''}`}>
+        <nav ref={menuRef} className={`menu ${isActive ? 'active' : ''}`} className={`${styles.nav} ${isActive ? styles.active : ''}`}>
             <ul className={styles.nav_links_1}>
                 <li>
                   <Link to="/" className={styles.link} onClick={closeMenu}>Home</Link>
