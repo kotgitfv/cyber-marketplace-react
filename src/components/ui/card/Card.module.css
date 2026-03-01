@@ -1,0 +1,42 @@
+.card {
+    background: #F6F6F6;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    .like_area {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: end;
+        .btn {
+            background: none;
+            border: none;
+            padding: 2px;
+            width: 28px;
+            height: 28px;
+            margin-left: 120px;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 18px;
+}

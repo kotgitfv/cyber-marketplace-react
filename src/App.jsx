@@ -5,6 +5,7 @@ import Categories from './components/layout/categories/Categories.jsx'
 import ProductPage from './pages/Product/ProductPage.jsx'; 
 import Footer from './components/layout/footer/Footer.jsx';
 import Products from './components/layout/products/products.jsx';
+import Arrivals from './components/layout/arrivals/Arrivals.jsx'
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Hero />
                 <Products />
                 <Categories />
+                <Arrivals />
               </>
             } />
             <Route path="/product" element={<ProductPage />} />
