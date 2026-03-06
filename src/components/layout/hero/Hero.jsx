@@ -1,14 +1,13 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 import prewPhone from "../../../assets/img/prewiew iphone.png";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
-  const navigate = useNavigate();
-
+  
   return (
     <section className={styles.hero}>
-      <div className="header_txt">
+      <div className={styles.header_txt}>
         <p className={styles.pre_title}>Pro.Beyond.</p>
         <h2 className={styles.title}>
           IPhone 14 <span className={styles.span}>Pro</span>
@@ -17,9 +16,9 @@ const Hero = () => {
           Created to change everything for the better. For everyone
         </p>
         
-        <button onClick={() => navigate('/product')} className="light_btn">
-          Shop Now
-        </button>
+        <Link to="/product/iphone-14-pro-max">
+          <button className="light_btn">Shop Now</button>
+        </Link>
       </div>
       
       <div className={styles.image}>

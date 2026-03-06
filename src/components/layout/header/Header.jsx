@@ -7,14 +7,14 @@ import styles from "./Header.module.css";
 const Header = () => {
 const [isActive, setIsActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
 
   const menuRef = useRef(null);
+  const buttonRef = useRef(null); 
 
   const burgerOn = () => {
     setIsActive(!isActive);
   };
-  
+
   const closeMenu = () => {
     setIsActive(false);
   };
@@ -25,21 +25,27 @@ const [isActive, setIsActive] = useState(false);
     };
 
     const handleClickOutside = (event) => {
-
-      if (isActive && menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        isActive &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         closeMenu();
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
     };
   }, [isActive]);
-
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.header_scrolled : ''}`}>

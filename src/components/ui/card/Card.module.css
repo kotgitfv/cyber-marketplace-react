@@ -1,6 +1,6 @@
 .card {
     background: #F6F6F6;
-    padding: 12px 24px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,9 +9,8 @@
     border-radius: 8px;
     .like_area {
             display: flex;
-            flex-direction: row;
-            justify-content: end;
-            align-items: end;
+            width: 100%;
+            justify-content: flex-end;
         .btn {
             background: none;
             border: none;
@@ -33,7 +32,7 @@
 
 .price {
     font-weight: 700;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .title {

@@ -21,17 +21,17 @@ const Arrivals = () => {
 
       <div className={styles.cards}>
         <Card 
-          title='Apple iPhone 14 Pro Max 128GB...'
+          title='Apple Watch Series 9 GPS 41mm Starlight Aluminium Case'
           price='$900'
           img={iphone}
         />
         <Card 
-          title='Blackmagic Pocket Cinema...'
+          title='Blackmagic Pocket Cinema Camera 6k'
           price='$2535'
           img={camera}
         />
         <Card 
-          title='Apple Watch Series 9 GPS 41'
+          title='Apple Watch Series 9 GPS 41mm Starlight Aluminium Case'
           price='$399'
           img={appleWatch}
         />
@@ -41,22 +41,22 @@ const Arrivals = () => {
           img={airpods}
         />
         <Card 
-          title='Samsung Galaxy Watch6 Classic'
+          title='Samsung Galaxy Watch6 Classic 47mm Black'
           price='$369'
           img={samsungWatch}
         />
         <Card 
-          title='Galaxy Z Fold5 Unlocked | 256...'
+          title='Galaxy Z Fold5 Unlocked | 256GB | Phantom Black'
           price='$1799'
           img={samsung}
         />
         <Card 
-          title='Galaxy Buds FE Graphite...'
+          title='Galaxy Buds FE Graphite'
           price='$99.99'
           img={buds}
         />
         <Card 
-          title=' Apple iPad 9 10.2" 64GB...'
+          title='Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021'
           price='$398'
           img={ipad}
         />

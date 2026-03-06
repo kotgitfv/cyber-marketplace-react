@@ -1,17 +1,18 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 5px;
 }
 
 .title {
     margin-bottom: 32px;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 30px;
 }
 
 
 .arrivals {
     background: white;
     padding-block: 56px;
+    padding: 56px 3px;
 }

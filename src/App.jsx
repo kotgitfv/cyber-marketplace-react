@@ -36,9 +36,3 @@ export default App;
 
 
 
-
-// в случае глюка: ctrl + shift + P >  Restart Extension Host
-
-// после изменений :  git add .
-// git commit -m "описание того что изменил"
-// git push

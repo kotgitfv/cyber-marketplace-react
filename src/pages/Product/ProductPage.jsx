@@ -1,26 +1,57 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Smartphone, Cpu, Camera, Battery, Layers, Monitor } from 'lucide-react';
-import iphoneImg from '../../assets/img/iphone14pro Space.png';
-import styles from "./ProductStyles.module.css"
+import styles from "./ProductStyles.module.css";
+
+const PRODUCTS_DATA = [
+  {
+    id: 'iphone-14-pro-max',
+    title: 'Apple iPhone 14 Pro Max',
+    price: '$1399',
+    oldPrice: '$1499',
+    img: '/assets/img/iphone14pro.png', 
+    specs: {
+      screen: '6.7"',
+      cpu: 'Apple A16 Bionic',
+      cores: '6',
+      mainCam: '48-12-12 MP',
+      frontCam: '12 MP',
+      battery: '4323 mAh'
+    }
+  },
+];
 
 const ProductPage = () => {
+  const { id } = useParams();
+
+  const product = PRODUCTS_DATA.find(item => item.id === id);
+
+  if (!product) {
+    return (
+      <div className={styles.container}>
+        <h2>Product not found</h2>
+        <Link to="/" className={styles.back}>Go Home</Link>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.main_info}>
-        <img src={iphoneImg} alt="iPhone 14 Pro Max" className={styles.main_img} />
-        <h1 className={styles.title}>Apple iPhone 14 Pro Max</h1>
+        <img src={product.img} alt={product.title} className={styles.main_img} />
+        <h1 className={styles.title}>{product.title}</h1>
         <div className={styles.price_block}>
-          <span className={styles.price}>$1399</span>
-          <span className={styles.old_price}>$1499</span>
+          <span className={styles.price}>{product.price}</span>
+          {product.oldPrice && <span className={styles.old_price}>{product.oldPrice}</span>}
         </div>
       </div>
+
       <div className={styles.specs_grid}>
         <div className={styles.card}>
           <Smartphone size={20} />
           <div>
             <p className={styles.label}>Screen size</p>
-            <p className={styles.val}>6.7"</p>
+            <p className={styles.val}>{product.specs.screen}</p>
           </div>
         </div>
 
@@ -28,7 +59,7 @@ const ProductPage = () => {
           <Cpu size={20} />
           <div>
             <p className={styles.label}>CPU</p>
-            <p className={styles.val}>Apple A16 Bionic</p>
+            <p className={styles.val}>{product.specs.cpu}</p>
           </div>
         </div>
 
@@ -36,7 +67,7 @@ const ProductPage = () => {
           <Layers size={20} />
           <div>
             <p className={styles.label}>Number of Cores</p>
-            <p className={styles.val}>6</p>
+            <p className={styles.val}>{product.specs.cores}</p>
           </div>
         </div>
 
@@ -44,7 +75,7 @@ const ProductPage = () => {
           <Camera size={20} />
           <div>
             <p className={styles.label}>Main camera</p>
-            <p className={styles.val}>48-12-12 MP</p>
+            <p className={styles.val}>{product.specs.mainCam}</p>
           </div>
         </div>
 
@@ -52,7 +83,7 @@ const ProductPage = () => {
           <Monitor size={20} />
           <div>
             <p className={styles.label}>Front-camera</p>
-            <p className={styles.val}>12 MP</p>
+            <p className={styles.val}>{product.specs.frontCam}</p>
           </div>
         </div>
 
@@ -60,12 +91,13 @@ const ProductPage = () => {
           <Battery size={20} />
           <div>
             <p className={styles.label}>Battery capacity</p>
-            <p className={styles.val}>4323 mAh</p>
+            <p className={styles.val}>{product.specs.battery}</p>
           </div>
         </div>
       </div>
-      <Link to='/' >
-          <button className={styles.back}>Back</button>
+
+      <Link to='/'>
+        <button className={styles.back}>Back</button>
       </Link>
     </div>
   );
