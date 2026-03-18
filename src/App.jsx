@@ -6,11 +6,13 @@ import ProductPage from './pages/Product/ProductPage.jsx';
 import Footer from './components/layout/footer/Footer.jsx';
 import Products from './components/layout/products/products.jsx';
 import Arrivals from './components/layout/arrivals/Arrivals.jsx'
+import ScrollTop from './components/ScrollTop.jsx'
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollTop/>
       <div className="App">
         <Header /> 
         <main>
@@ -23,7 +25,7 @@ function App() {
                 <Arrivals />
               </>
             } />
-            <Route path="/product" element={<ProductPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </main>
             <Footer />

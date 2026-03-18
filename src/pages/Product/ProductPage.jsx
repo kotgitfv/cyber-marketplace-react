@@ -2,34 +2,17 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Smartphone, Cpu, Camera, Battery, Layers, Monitor } from 'lucide-react';
 import styles from "./ProductStyles.module.css";
-
-const PRODUCTS_DATA = [
-  {
-    id: 'iphone-14-pro-max',
-    title: 'Apple iPhone 14 Pro Max',
-    price: '$1399',
-    oldPrice: '$1499',
-    img: '/assets/img/iphone14pro.png', 
-    specs: {
-      screen: '6.7"',
-      cpu: 'Apple A16 Bionic',
-      cores: '6',
-      mainCam: '48-12-12 MP',
-      frontCam: '12 MP',
-      battery: '4323 mAh'
-    }
-  },
-];
+import prevI from '../../assets/img/spc/iphone14proSpace.png'
+import { PRODUCTS_DATA } from '../../data/products.js';
 
 const ProductPage = () => {
   const { id } = useParams();
-
   const product = PRODUCTS_DATA.find(item => item.id === id);
 
   if (!product) {
     return (
       <div className={styles.container}>
-        <h2>Product not found</h2>
+        <h2>Product {id} not found</h2>
         <Link to="/" className={styles.back}>Go Home</Link>
       </div>
     );
